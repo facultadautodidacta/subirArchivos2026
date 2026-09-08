@@ -24,14 +24,23 @@
                                 <td>{{ basename($archivo) }}</td>
                                 <td>{{ $archivo }}</td>
                                 <td>
-                                    <a href="{{ Storage::url($archivo) }}" target="_blank" class="btn btn-sm btn-primary">Ver</a>
-                                    <a href="{{ Storage::url($archivo) }}" download="{{ basename($archivo) }}" class="btn btn-sm btn-success">Descargar</a>
+                                    <a href="{{ Storage::url($archivo) }}" target="_blank" class="btn btn-sm btn-primary">
+                                        Ver
+                                    </a>
+                                    <a href="{{ Storage::url($archivo) }}" download="{{ basename($archivo) }}" 
+                                        class="btn btn-sm btn-success">
+                                        Descargar
+                                    </a>
 
                                     <!-- Formulario sencillo para eliminar -->
-                                    <form action="{{ route('eliminar-archivo') }}" method="POST" style="display:inline-block; margin-left:6px;">
+                                    <form action="{{ route('eliminar-archivo') }}" method="POST" 
+                                        style="display:inline-block; margin-left:6px;">
                                         @csrf
                                         <input type="hidden" name="archivo" value="{{ $archivo }}">
-                                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('¿Eliminar este archivo?');">Eliminar</button>
+                                        <button type="submit" class="btn btn-sm btn-danger" 
+                                            onclick="return confirm('¿Eliminar este archivo?');">
+                                            Eliminar
+                                        </button>
                                     </form>
                                 </td>
                             </tr>
